@@ -19,15 +19,15 @@ if (process.env.JAWSDB_URL) {
 };
 
 //Database Connection
-connection.connect(function (err) {
-    if (err) {
-        console.error("error conncting: " + err.stack);
-        return;
-    }
-    console.log("connected as id " + connection.threadId);
-});
+// connection.connect(function (err) {
+//     if (err) {
+//         console.error("error conncting: " + err.stack);
+//         return;
+//     }
+//     console.log("connected as id " + connection.threadId);
+// });
 
 // Export connection
-// connection.connect ();
+connection.connect ();
 module.exports = connection;
 
