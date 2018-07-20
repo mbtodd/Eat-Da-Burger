@@ -9,7 +9,7 @@ if (process.env.JAWSDB_URL) {
 } else {
 
     connection = mysql.createConnection({
-        // port: 3306,
+        port: 3306,
         host: "localhost",
         user: "root",
         password: "gwpswd",
@@ -18,16 +18,16 @@ if (process.env.JAWSDB_URL) {
 
 };
 
-//Database Connection
-// connection.connect(function (err) {
-//     if (err) {
-//         console.error("error conncting: " + err.stack);
-//         return;
-//     }
-//     console.log("connected as id " + connection.threadId);
-// });
+// Database Connection
+connection.connect(function (err) {
+    if (err) {
+        console.error("error connecting: " + err.stack);
+        return;
+    }
+    console.log("connected as id " + connection.threadId);
+});
 
 // Export connection
-connection.connect ();
+// connection.connect ();
 module.exports = connection;
 
